@@ -1,0 +1,17 @@
+{
+  "name": "Ghost",
+  "version": "0.1",
+  "slug": "ghost",
+  "description": "A powerful platform to share your content",
+  "url": "https://github.com/cyberjunky/repository/ghost",
+  "panel_icon": "mdi:ghost-outline",
+  "startup": "application",
+  "boot": "auto",
+  "options": {},
+  "schema": {}, 
+  "host_network": true,
+  "ports": {
+    "2368/tcp": 2368
+  },
+  "arch": ["amd64"]
+}

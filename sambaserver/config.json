@@ -1,0 +1,45 @@
+{
+    "name": "Samba Server",
+    "version": "9.3.0-server1",
+    "slug": "sambaserver",
+    "description": "Expose drives with SMB/CIFS",
+    "url": "https://github.com/cyberjunky/hassio-addons/tree/master/sambaserver",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "startup": "services",
+    "boot": "auto",
+    "init": false,
+    "host_network": true,
+    "map": ["config:rw", "ssl:rw", "addons:rw", "share:rw", "backup:rw", "media:rw"],
+    "options": {
+        "workgroup": "WORKGROUP",
+        "username": "homeassistant",
+        "password": null,
+        "interface": "",
+        "allow_hosts": [
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "fe80::/10"
+        ],
+        "drives": ["<PARTITION-LABEL>"],
+        "veto_files": ["._*", ".DS_Store", "Thumbs.db", "icon?", ".Trashes"],
+        "compatibility_mode": false
+    },
+    "schema": {
+        "workgroup": "str",
+        "username": "str",
+        "password": "str",
+        "interface": "str",
+        "drives": ["str"],
+        "allow_hosts": ["str"],
+        "veto_files": ["str"],
+        "compatibility_mode": "bool?"
+    },
+    "udev": true,
+    "usb": true,
+    "host_dbus": true,
+    "device-tree": true,
+    "kernel_modules": true,
+    "privileged": ["SYS_ADMIN", "SYS_RAWIO", "SYS_RESOURCE"],
+    "full_access": true
+}
